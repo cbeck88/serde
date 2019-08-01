@@ -349,13 +349,6 @@ impl ser::Error for Error {
     }
 }
 
-#[cfg(feature = "std")]
-impl error::Error for Error {
-    fn description(&self) -> &str {
-        unimplemented!()
-    }
-}
-
 impl Display for Error {
     fn fmt(&self, _: &mut fmt::Formatter) -> fmt::Result {
         unimplemented!()

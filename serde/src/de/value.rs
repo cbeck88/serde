@@ -103,13 +103,6 @@ impl Display for Error {
     }
 }
 
-#[cfg(feature = "std")]
-impl error::Error for Error {
-    fn description(&self) -> &str {
-        &self.err
-    }
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 
 impl<'de, E> IntoDeserializer<'de, E> for ()

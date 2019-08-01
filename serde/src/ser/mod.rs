@@ -171,10 +171,6 @@ macro_rules! declare_error_trait {
     }
 }
 
-#[cfg(feature = "std")]
-declare_error_trait!(Error: Sized + error::Error);
-
-#[cfg(not(feature = "std"))]
 declare_error_trait!(Error: Sized + Debug + Display);
 
 ////////////////////////////////////////////////////////////////////////////////
