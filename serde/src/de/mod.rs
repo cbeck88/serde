@@ -287,10 +287,12 @@ macro_rules! declare_error_trait {
     }
 }
 
-#[cfg(feature = "std")]
-declare_error_trait!(Error: Sized + error::Error);
-
-#[cfg(not(feature = "std"))]
+// Note: removing std::error::Error dependency for now
+// This may be mooted by https://github.com/rust-lang/rust/issues/62502
+// #[cfg(feature = "std")]
+// declare_error_trait!(Error: Sized + error::Error);
+//
+// #[cfg(not(feature = "std"))]
 declare_error_trait!(Error: Sized + Debug + Display);
 
 /// `Unexpected` represents an unexpected invocation of any one of the `Visitor`
